@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.2 on win32)" generated="20170924 22:30:39.939">
+<suite id="s1" name="Calculator" source="d:\tmp\20170922-RobotTest\RobotFrameworkSolution\calculator.robot">
+<kw name="Open Calculator" type="setup">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of a WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>desired_capabilities=${desired_capabilities}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:40.423" level="INFO">Creating an instance of the Chrome WebDriver</msg>
+<status status="PASS" starttime="20170924 22:30:40.423" endtime="20170924 22:30:44.294"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:44.310" level="INFO">Opening url 'http://www.calculator.net/conversion-calculator.html'</msg>
+<status status="PASS" starttime="20170924 22:30:44.294" endtime="20170924 22:30:46.035"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>document.getElementById('right').remove()</arg>
+</arguments>
+<msg timestamp="20170924 22:30:46.036" level="INFO">Executing JavaScript:
+document.getElementById('right').remove()</msg>
+<status status="PASS" starttime="20170924 22:30:46.036" endtime="20170924 22:30:46.043"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>1024</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:46.043" endtime="20170924 22:30:47.175"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Conversion Calculator</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.175" level="INFO">Page title is 'Conversion Calculator'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.175" endtime="20170924 22:30:47.175"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:40.423" endtime="20170924 22:30:47.175"></status>
+</kw>
+<test id="s1-t1" name="Check if conversion type switch works">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Temperature</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.175" level="INFO">Clicking link 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.175" endtime="20170924 22:30:47.305"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>Temperature</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.306" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.306" endtime="20170924 22:30:47.338"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:47.641" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:47.339" endtime="20170924 22:30:47.641"></status>
+</kw>
+<tags>
+<tag>simple</tag>
+</tags>
+<status status="PASS" starttime="20170924 22:30:47.175" endtime="20170924 22:30:47.642" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Convert temperature from Celsius to Kelvin">
+<kw name="Set conversion type to">
+<arguments>
+<arg>Temperature</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.643" level="INFO">Clicking link 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.643" endtime="20170924 22:30:47.686"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.686" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.686" endtime="20170924 22:30:47.707"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:47.643" endtime="20170924 22:30:47.707"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>Celsius</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.708" level="INFO">Selecting option(s) 'Celsius' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.708" endtime="20170924 22:30:47.761"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.761" level="INFO">Verifying list 'calFrom' has option(s) [ Celsius ] selected.</msg>
+<msg timestamp="20170924 22:30:47.777" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.761" endtime="20170924 22:30:47.833"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:47.708" endtime="20170924 22:30:47.833"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>Kelvin</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.849" level="INFO">Selecting option(s) 'Kelvin' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.849" endtime="20170924 22:30:47.934"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:47.934" level="INFO">Verifying list 'calTo' has option(s) [ Kelvin ] selected.</msg>
+<msg timestamp="20170924 22:30:47.940" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:47.934" endtime="20170924 22:30:48.011"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:47.849" endtime="20170924 22:30:48.011"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>20</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.011" level="INFO">Typing text '20' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:48.011" endtime="20170924 22:30:48.090"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.112" level="INFO">Content of text field 'fromVal' is '20'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.090" endtime="20170924 22:30:48.112"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.011" endtime="20170924 22:30:48.112"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>293.15</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.134" level="INFO">Content of text field 'toVal' is '293.15'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.113" endtime="20170924 22:30:48.134"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.113" endtime="20170924 22:30:48.135"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:48.385" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:48.135" endtime="20170924 22:30:48.385"></status>
+</kw>
+<tags>
+<tag>simple</tag>
+</tags>
+<status status="PASS" starttime="20170924 22:30:47.643" endtime="20170924 22:30:48.386" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Check error on minus">
+<kw name="Input value">
+<arguments>
+<arg>-</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.388" level="INFO">Typing text '-' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:48.387" endtime="20170924 22:30:48.411"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.421" level="INFO">Content of text field 'fromVal' is '-'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.411" endtime="20170924 22:30:48.421"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.387" endtime="20170924 22:30:48.422"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>Error${SPACE}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.431" level="INFO">Content of text field 'toVal' is 'Error '.</msg>
+<status status="PASS" starttime="20170924 22:30:48.422" endtime="20170924 22:30:48.431"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.422" endtime="20170924 22:30:48.431"></status>
+</kw>
+<tags>
+<tag>simple</tag>
+</tags>
+<status status="PASS" starttime="20170924 22:30:48.386" endtime="20170924 22:30:48.432" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Check conversion change">
+<kw name="Set conversion type to">
+<arguments>
+<arg>Temperature</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.433" level="INFO">Clicking link 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.433" endtime="20170924 22:30:48.478"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.478" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.478" endtime="20170924 22:30:48.500"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.433" endtime="20170924 22:30:48.500"></status>
+</kw>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.501" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:48.501" endtime="20170924 22:30:48.530"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.539" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:48.530" endtime="20170924 22:30:48.539"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.501" endtime="20170924 22:30:48.539"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:48.540" endtime="20170924 22:30:48.550"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:48.550" endtime="20170924 22:30:48.564"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.573" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:48.564" endtime="20170924 22:30:48.573"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.583" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:48.573" endtime="20170924 22:30:48.583"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.500" endtime="20170924 22:30:48.583"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>Celsius</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.584" level="INFO">Selecting option(s) 'Celsius' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.584" endtime="20170924 22:30:48.616"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.616" level="INFO">Verifying list 'calFrom' has option(s) [ Celsius ] selected.</msg>
+<msg timestamp="20170924 22:30:48.622" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.616" endtime="20170924 22:30:48.676"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.583" endtime="20170924 22:30:48.676"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>Kelvin</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.676" level="INFO">Selecting option(s) 'Kelvin' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.676" endtime="20170924 22:30:48.739"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.739" level="INFO">Verifying list 'calTo' has option(s) [ Kelvin ] selected.</msg>
+<msg timestamp="20170924 22:30:48.745" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.739" endtime="20170924 22:30:48.810"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.676" endtime="20170924 22:30:48.810"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>20</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.810" level="INFO">Typing text '20' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:48.810" endtime="20170924 22:30:48.837"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.847" level="INFO">Content of text field 'fromVal' is '20'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.837" endtime="20170924 22:30:48.848"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.810" endtime="20170924 22:30:48.848"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>293.15</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.860" level="INFO">Content of text field 'toVal' is '293.15'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.849" endtime="20170924 22:30:48.860"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.848" endtime="20170924 22:30:48.860"></status>
+</kw>
+<kw name="Select option by subtext">
+<arguments>
+<arg>Fahrenheit (</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//option[starts-with(text(), '${text}')]</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.861" level="INFO">Clicking element 'xpath=//option[starts-with(text(), 'Fahrenheit (')]'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.861" endtime="20170924 22:30:48.899"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.861" endtime="20170924 22:30:48.899"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>68</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:48.911" level="INFO">Content of text field 'toVal' is '68'.</msg>
+<status status="PASS" starttime="20170924 22:30:48.900" endtime="20170924 22:30:48.911"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:48.900" endtime="20170924 22:30:48.911"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:49.175" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:48.911" endtime="20170924 22:30:49.176"></status>
+</kw>
+<tags>
+<tag>xpath</tag>
+</tags>
+<status status="PASS" starttime="20170924 22:30:48.432" endtime="20170924 22:30:49.176" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Check all conversion types">
+<kw name="Check conversion">
+<arguments>
+<arg>Length</arg>
+<arg>Centimeter</arg>
+<arg>Meter</arg>
+<arg>10</arg>
+<arg>0.1</arg>
+</arguments>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.178" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:49.178" endtime="20170924 22:30:49.200"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.208" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:49.200" endtime="20170924 22:30:49.209"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.177" endtime="20170924 22:30:49.209"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:49.209" endtime="20170924 22:30:49.218"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:49.218" endtime="20170924 22:30:49.232"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.241" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:49.232" endtime="20170924 22:30:49.241"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.251" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:49.241" endtime="20170924 22:30:49.251"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.177" endtime="20170924 22:30:49.251"></status>
+</kw>
+<kw name="Set conversion type to">
+<arguments>
+<arg>${type}</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.252" level="INFO">Clicking link 'Length'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.252" endtime="20170924 22:30:49.309"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.309" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Length'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.309" endtime="20170924 22:30:49.335"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.251" endtime="20170924 22:30:49.335"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>${from}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.336" level="INFO">Selecting option(s) 'Centimeter' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.336" endtime="20170924 22:30:49.413"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.413" level="INFO">Verifying list 'calFrom' has option(s) [ Centimeter ] selected.</msg>
+<msg timestamp="20170924 22:30:49.419" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.413" endtime="20170924 22:30:49.557"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.336" endtime="20170924 22:30:49.557"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>${to}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.557" level="INFO">Selecting option(s) 'Meter' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.557" endtime="20170924 22:30:49.604"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.604" level="INFO">Verifying list 'calTo' has option(s) [ Meter ] selected.</msg>
+<msg timestamp="20170924 22:30:49.619" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.604" endtime="20170924 22:30:49.760"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.557" endtime="20170924 22:30:49.760"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.760" level="INFO">Typing text '10' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:49.760" endtime="20170924 22:30:49.799"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.808" level="INFO">Content of text field 'fromVal' is '10'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.800" endtime="20170924 22:30:49.808"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.760" endtime="20170924 22:30:49.809"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>${expectedResult}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:49.822" level="INFO">Content of text field 'toVal' is '0.1'.</msg>
+<status status="PASS" starttime="20170924 22:30:49.809" endtime="20170924 22:30:49.822"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.809" endtime="20170924 22:30:49.822"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:50.077" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:49.822" endtime="20170924 22:30:50.077"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:49.177" endtime="20170924 22:30:50.077"></status>
+</kw>
+<kw name="Check conversion">
+<arguments>
+<arg>Temperature</arg>
+<arg>Celsius</arg>
+<arg>Fahrenheit</arg>
+<arg>25</arg>
+<arg>77</arg>
+</arguments>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.077" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:50.077" endtime="20170924 22:30:50.104"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.113" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:50.104" endtime="20170924 22:30:50.113"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.077" endtime="20170924 22:30:50.113"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:50.113" endtime="20170924 22:30:50.123"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:50.123" endtime="20170924 22:30:50.137"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.148" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:50.137" endtime="20170924 22:30:50.148"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.158" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:50.148" endtime="20170924 22:30:50.159"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.077" endtime="20170924 22:30:50.159"></status>
+</kw>
+<kw name="Set conversion type to">
+<arguments>
+<arg>${type}</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.159" level="INFO">Clicking link 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.159" endtime="20170924 22:30:50.203"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.204" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Temperature'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.203" endtime="20170924 22:30:50.225"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.159" endtime="20170924 22:30:50.225"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>${from}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.226" level="INFO">Selecting option(s) 'Celsius' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.226" endtime="20170924 22:30:50.247"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.247" level="INFO">Verifying list 'calFrom' has option(s) [ Celsius ] selected.</msg>
+<msg timestamp="20170924 22:30:50.247" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.247" endtime="20170924 22:30:50.325"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.225" endtime="20170924 22:30:50.325"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>${to}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.325" level="INFO">Selecting option(s) 'Fahrenheit' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.325" endtime="20170924 22:30:50.403"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.404" level="INFO">Verifying list 'calTo' has option(s) [ Fahrenheit ] selected.</msg>
+<msg timestamp="20170924 22:30:50.410" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.404" endtime="20170924 22:30:50.463"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.325" endtime="20170924 22:30:50.463"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.463" level="INFO">Typing text '25' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:50.463" endtime="20170924 22:30:50.499"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.508" level="INFO">Content of text field 'fromVal' is '25'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.500" endtime="20170924 22:30:50.509"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.463" endtime="20170924 22:30:50.509"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>${expectedResult}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.519" level="INFO">Content of text field 'toVal' is '77'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.509" endtime="20170924 22:30:50.519"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.509" endtime="20170924 22:30:50.519"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:50.796" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:50.519" endtime="20170924 22:30:50.796"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.077" endtime="20170924 22:30:50.796"></status>
+</kw>
+<kw name="Check conversion">
+<arguments>
+<arg>Area</arg>
+<arg>Hectare</arg>
+<arg>Acre</arg>
+<arg>10</arg>
+<arg>24.710538147</arg>
+</arguments>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.796" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:50.796" endtime="20170924 22:30:50.821"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.830" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:50.821" endtime="20170924 22:30:50.831"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.796" endtime="20170924 22:30:50.831"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:50.831" endtime="20170924 22:30:50.840"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:50.840" endtime="20170924 22:30:50.855"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.865" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:50.855" endtime="20170924 22:30:50.865"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.874" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:50.865" endtime="20170924 22:30:50.874"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.796" endtime="20170924 22:30:50.874"></status>
+</kw>
+<kw name="Set conversion type to">
+<arguments>
+<arg>${type}</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.874" level="INFO">Clicking link 'Area'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.874" endtime="20170924 22:30:50.928"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.929" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Area'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.929" endtime="20170924 22:30:50.952"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.874" endtime="20170924 22:30:50.952"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>${from}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:50.953" level="INFO">Selecting option(s) 'Hectare' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:50.953" endtime="20170924 22:30:51.025"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.026" level="INFO">Verifying list 'calFrom' has option(s) [ Hectare ] selected.</msg>
+<msg timestamp="20170924 22:30:51.031" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.026" endtime="20170924 22:30:51.175"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.952" endtime="20170924 22:30:51.175"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>${to}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.175" level="INFO">Selecting option(s) 'Acre' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.175" endtime="20170924 22:30:51.251"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.252" level="INFO">Verifying list 'calTo' has option(s) [ Acre ] selected.</msg>
+<msg timestamp="20170924 22:30:51.257" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.251" endtime="20170924 22:30:51.424"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.175" endtime="20170924 22:30:51.424"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.424" level="INFO">Typing text '10' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:51.424" endtime="20170924 22:30:51.453"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.462" level="INFO">Content of text field 'fromVal' is '10'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.453" endtime="20170924 22:30:51.462"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.424" endtime="20170924 22:30:51.462"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>${expectedResult}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.471" level="INFO">Content of text field 'toVal' is '24.710538147'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.462" endtime="20170924 22:30:51.472"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.462" endtime="20170924 22:30:51.472"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:51.726" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:51.472" endtime="20170924 22:30:51.727"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:50.796" endtime="20170924 22:30:51.727"></status>
+</kw>
+<kw name="Check conversion">
+<arguments>
+<arg>Volume</arg>
+<arg>Imperial Pint</arg>
+<arg>Liter</arg>
+<arg>2</arg>
+<arg>1.1365225</arg>
+</arguments>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.728" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:51.728" endtime="20170924 22:30:51.749"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.759" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:51.749" endtime="20170924 22:30:51.759"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.728" endtime="20170924 22:30:51.759"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:51.759" endtime="20170924 22:30:51.769"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:51.769" endtime="20170924 22:30:51.784"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.795" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:51.784" endtime="20170924 22:30:51.795"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.806" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:51.795" endtime="20170924 22:30:51.806"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.728" endtime="20170924 22:30:51.806"></status>
+</kw>
+<kw name="Set conversion type to">
+<arguments>
+<arg>${type}</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.807" level="INFO">Clicking link 'Volume'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.807" endtime="20170924 22:30:51.861"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.862" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Volume'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.861" endtime="20170924 22:30:51.884"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.806" endtime="20170924 22:30:51.884"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>${from}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.885" level="INFO">Selecting option(s) 'Imperial Pint' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.885" endtime="20170924 22:30:51.957"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:51.958" level="INFO">Verifying list 'calFrom' has option(s) [ Imperial Pint ] selected.</msg>
+<msg timestamp="20170924 22:30:51.963" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:51.957" endtime="20170924 22:30:52.234"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.884" endtime="20170924 22:30:52.234"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>${to}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.234" level="INFO">Selecting option(s) 'Liter' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:52.234" endtime="20170924 22:30:52.315"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.316" level="INFO">Verifying list 'calTo' has option(s) [ Liter ] selected.</msg>
+<msg timestamp="20170924 22:30:52.321" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:52.316" endtime="20170924 22:30:52.600"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.234" endtime="20170924 22:30:52.600"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.600" level="INFO">Typing text '2' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:52.600" endtime="20170924 22:30:52.638"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.649" level="INFO">Content of text field 'fromVal' is '2'.</msg>
+<status status="PASS" starttime="20170924 22:30:52.638" endtime="20170924 22:30:52.649"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.600" endtime="20170924 22:30:52.649"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>${expectedResult}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.660" level="INFO">Content of text field 'toVal' is '1.1365225'.</msg>
+<status status="PASS" starttime="20170924 22:30:52.650" endtime="20170924 22:30:52.660"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.649" endtime="20170924 22:30:52.660"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:52.905" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:52.660" endtime="20170924 22:30:52.905"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:51.727" endtime="20170924 22:30:52.905"></status>
+</kw>
+<kw name="Check conversion">
+<arguments>
+<arg>Weight</arg>
+<arg>Carrat</arg>
+<arg>Gram</arg>
+<arg>32</arg>
+<arg>6.4</arg>
+</arguments>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.907" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:52.906" endtime="20170924 22:30:52.928"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.938" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:52.928" endtime="20170924 22:30:52.938"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.906" endtime="20170924 22:30:52.938"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:52.938" endtime="20170924 22:30:52.947"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:52.948" endtime="20170924 22:30:52.962"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.972" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:52.962" endtime="20170924 22:30:52.972"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.980" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:52.972" endtime="20170924 22:30:52.980"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.906" endtime="20170924 22:30:52.981"></status>
+</kw>
+<kw name="Set conversion type to">
+<arguments>
+<arg>${type}</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:52.981" level="INFO">Clicking link 'Weight'.</msg>
+<status status="PASS" starttime="20170924 22:30:52.981" endtime="20170924 22:30:53.036"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.037" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Weight'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.036" endtime="20170924 22:30:53.059"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.981" endtime="20170924 22:30:53.059"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>${from}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.060" level="INFO">Selecting option(s) 'Carrat' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.060" endtime="20170924 22:30:53.132"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.133" level="INFO">Verifying list 'calFrom' has option(s) [ Carrat ] selected.</msg>
+<msg timestamp="20170924 22:30:53.139" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.132" endtime="20170924 22:30:53.261"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.059" endtime="20170924 22:30:53.261"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>${to}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.261" level="INFO">Selecting option(s) 'Gram' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.261" endtime="20170924 22:30:53.348"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.349" level="INFO">Verifying list 'calTo' has option(s) [ Gram ] selected.</msg>
+<msg timestamp="20170924 22:30:53.354" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.348" endtime="20170924 22:30:53.493"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.261" endtime="20170924 22:30:53.493"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.493" level="INFO">Typing text '32' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:53.493" endtime="20170924 22:30:53.532"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.543" level="INFO">Content of text field 'fromVal' is '32'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.532" endtime="20170924 22:30:53.543"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.493" endtime="20170924 22:30:53.543"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>${expectedResult}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.552" level="INFO">Content of text field 'toVal' is '6.4'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.543" endtime="20170924 22:30:53.552"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.543" endtime="20170924 22:30:53.552"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:53.806" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:53.552" endtime="20170924 22:30:53.806"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:52.906" endtime="20170924 22:30:53.806"></status>
+</kw>
+<kw name="Check conversion">
+<arguments>
+<arg>Time</arg>
+<arg>Week</arg>
+<arg>Second</arg>
+<arg>1</arg>
+<arg>604800</arg>
+</arguments>
+<kw name="Clear conversion input">
+<kw name="Input value">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.806" level="INFO">Typing text '' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:53.806" endtime="20170924 22:30:53.832"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.842" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:53.832" endtime="20170924 22:30:53.842"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.806" endtime="20170924 22:30:53.843"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:53.843" endtime="20170924 22:30:53.853"></status>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>\\8</arg>
+</arguments>
+<status status="PASS" starttime="20170924 22:30:53.853" endtime="20170924 22:30:53.868"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.878" level="INFO">Content of text field 'fromVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:53.868" endtime="20170924 22:30:53.878"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.887" level="INFO">Content of text field 'toVal' is ''.</msg>
+<status status="PASS" starttime="20170924 22:30:53.878" endtime="20170924 22:30:53.887"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.806" endtime="20170924 22:30:53.887"></status>
+</kw>
+<kw name="Set conversion type to">
+<arguments>
+<arg>${type}</arg>
+</arguments>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.888" level="INFO">Clicking link 'Time'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.888" endtime="20170924 22:30:53.942"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=li#menuon a</arg>
+<arg>${conversionType}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.942" level="INFO">Verifying element 'css=li#menuon a' contains exactly text 'Time'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.942" endtime="20170924 22:30:53.963"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.888" endtime="20170924 22:30:53.963"></status>
+</kw>
+<kw name="Set conversion from">
+<arguments>
+<arg>${from}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:53.964" level="INFO">Selecting option(s) 'Week' from list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:53.964" endtime="20170924 22:30:54.035"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calFrom</arg>
+<arg>${convertFrom}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:54.035" level="INFO">Verifying list 'calFrom' has option(s) [ Week ] selected.</msg>
+<msg timestamp="20170924 22:30:54.041" level="INFO">Current page contains list 'calFrom'.</msg>
+<status status="PASS" starttime="20170924 22:30:54.035" endtime="20170924 22:30:54.178"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.964" endtime="20170924 22:30:54.178"></status>
+</kw>
+<kw name="Set conversion to">
+<arguments>
+<arg>${to}</arg>
+</arguments>
+<kw name="Select From List" library="SeleniumLibrary">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:54.178" level="INFO">Selecting option(s) 'Second' from list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:54.178" endtime="20170924 22:30:54.224"></status>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<doc>Verifies the selection of select list identified by `locator` is exactly `*items`.</doc>
+<arguments>
+<arg>calTo</arg>
+<arg>${convertTo}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:54.224" level="INFO">Verifying list 'calTo' has option(s) [ Second ] selected.</msg>
+<msg timestamp="20170924 22:30:54.224" level="INFO">Current page contains list 'calTo'.</msg>
+<status status="PASS" starttime="20170924 22:30:54.224" endtime="20170924 22:30:54.381"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:54.178" endtime="20170924 22:30:54.381"></status>
+</kw>
+<kw name="Input value">
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:54.381" level="INFO">Typing text '1' into text field 'fromVal'</msg>
+<status status="PASS" starttime="20170924 22:30:54.381" endtime="20170924 22:30:54.409"></status>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>fromVal</arg>
+<arg>${conversionValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:54.419" level="INFO">Content of text field 'fromVal' is '1'.</msg>
+<status status="PASS" starttime="20170924 22:30:54.409" endtime="20170924 22:30:54.419"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:54.381" endtime="20170924 22:30:54.419"></status>
+</kw>
+<kw name="Converted value should be">
+<arguments>
+<arg>${expectedResult}</arg>
+</arguments>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>toVal</arg>
+<arg>${toValue}</arg>
+</arguments>
+<msg timestamp="20170924 22:30:54.428" level="INFO">Content of text field 'toVal' is '604800'.</msg>
+<status status="PASS" starttime="20170924 22:30:54.420" endtime="20170924 22:30:54.429"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:54.419" endtime="20170924 22:30:54.429"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170924 22:30:54.712" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20170924 22:30:54.429" endtime="20170924 22:30:54.712"></status>
+</kw>
+<status status="PASS" starttime="20170924 22:30:53.806" endtime="20170924 22:30:54.727"></status>
+</kw>
+<tags>
+<tag>data-driven</tag>
+</tags>
+<status status="PASS" starttime="20170924 22:30:49.176" endtime="20170924 22:30:54.727" critical="yes"></status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20170924 22:30:54.727" endtime="20170924 22:30:57.852"></status>
+</kw>
+<doc>Simple Test Suite for Conversion Calculator</doc>
+<status status="PASS" starttime="20170924 22:30:39.939" endtime="20170924 22:30:57.852"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">data-driven</stat>
+<stat pass="3" fail="0">simple</stat>
+<stat pass="1" fail="0">xpath</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="Calculator">Calculator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
