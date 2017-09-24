@@ -1,6 +1,6 @@
 # Robot Framework Example
 
-This respository provides an example of [Robot Framework
+This repository provides an example of [Robot Framework
 (RF)](http://robotframework.org/) test suite for Web Application testing using
 [Selenium Library](https://github.com/robotframework/SeleniumLibrary) for RF.
 
@@ -15,7 +15,7 @@ For running the test suite you will need:
 - [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
   – place `chromedriver.exe` in the same folder as `calculator.robot` file
 
-- Chrome, Chromium or other Chrome–compliant broser – I used [Iron Portable
+- Chrome, Chromium or other Chrome–compliant browser – I used [Iron Portable
   (direct link)](http://www.srware.net/downloads/IronPortable.zip), you will
   also need to provide the correct path to the executable in the `config.py`
   file
