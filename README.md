@@ -85,7 +85,7 @@ You can then review what exactly happened by looking into the
 ## Troubleshooting
 
 - if you see *RuntimeWarning* about `robot.run`, don't worry,
-  it's a known issue – robotframework/robotframework#2552
+  it's a [known issue](https://github.com/robotframework/robotframework/issues/2552)
 
 - if you see *ChromeDriver* whining that `cannot find Chrome binary`,
   double– and even triple–check the path in `config.py` file
