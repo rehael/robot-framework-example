@@ -1,0 +1,4 @@
+robotframework
+selenium
+robotframework-seleniumlibrary >= 3.0.0b1
+
